@@ -7,8 +7,6 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "release": "releaser",
-    "types": "tsc --noEmit",
     "test-cypress": "cypress run"
   },
   "repository": {
