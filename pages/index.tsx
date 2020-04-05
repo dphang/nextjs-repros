@@ -4,7 +4,7 @@ import fetch from "isomorphic-unfetch";
 
 function HomePage(): JSX.Element {
     const handleClickButton = async (): Promise<void> => {
-        await fetch("https://www.mocky.io/v2/5185415ba171ea3a00704eed?mocky-delay=1000ms", {
+        await fetch("https://www.mocky.io/v2/5185415ba171ea3a00704eed?mocky-delay=5000ms", {
             method: "POST"
         });
     };
