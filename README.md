@@ -38,7 +38,7 @@ Interestingly, for my project, the above would always pass locally, but kept fai
 
 ## Test Project
 
-To attempt to reproduce this, I created this repository: a Next.js app with a simple page with a "Test Button" button, which when clicked will call https://mocky.io/ with a 2000 ms delay. It has mostly the same `package.json` file as the one used in my private repo.
+To attempt to reproduce this, I created this repository: a Next.js app with a simple page with a "Test Button" button, which when clicked will do a POST to `https://www.mocky.io/v2/5185415ba171ea3a00704eed?mocky-delay=2000ms` with a 2000 ms delay. It has mostly the same `package.json` file as the one used in my private repo.
 
 Index page with simple button: https://github.com/dphang/cypress-test/blob/master/pages/index.tsx
 Cypress test: https://github.com/dphang/cypress-test/blob/master/cypress/integration/test.spec.ts
