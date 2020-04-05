@@ -84,4 +84,6 @@ Skipping coverage report
 
 I am not sure whether it's my stack that's an issue (TypeScript + Next.js + MaterialUI) or some bug in Cypress. Hopefully this repro helps.
 
+Versions: Cypress 4.3.0, Electron 80, Next 9.3.0, React 16.13.0
+
 Example CircleCI build that's failing: https://app.circleci.com/pipelines/github/dphang/cypress-test/8/workflows/afaf8207-3497-46bf-9885-44efc72e62a1/jobs/8
