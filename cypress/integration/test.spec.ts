@@ -1,7 +1,9 @@
 describe("Test page", function() {
   beforeEach(function () {
     cy.server();
-    cy.route("POST", "https://www.mocky.io/v2/5185415ba171ea3a00704eed?mocky-delay=5000ms").as("sample");
+
+    // Delay of 2 seconds
+    cy.route("POST", "https://www.mocky.io/v2/5185415ba171ea3a00704eed?mocky-delay=2000ms").as("sample");
     cy.visit("/");
   });
 
