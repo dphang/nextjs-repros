@@ -36,12 +36,12 @@ Interestingly, for my project, the above would always pass locally, but kept fai
 
 ## Test Project
 
-To attempt to reproduce this, I created this repository: a Next.js app with a simple page with a "Test Button" button. It has mostly the same `package.json` file as the one used in my private repo.
+To attempt to reproduce this, I created this repository: a Next.js app with a simple page with a "Test Button" button, which when clicked will call https://mocky.io/ with a 2000 ms delay. It has mostly the same `package.json` file as the one used in my private repo.
 
 Index page with simple button: https://github.com/dphang/cypress-test/blob/master/pages/index.tsx
 Cypress test: https://github.com/dphang/cypress-test/blob/master/cypress/integration/test.spec.ts
 
-The Cypress test has two duplicate tests that call an API using https://www.mocky.io/ (2000 ms delay). About 50% of the time, one of the two tests would fail locally, and it fails all (or nearly all) the time on CircleCI. Note that this is different from my private project, where it was failing on CircleCI only.
+The Cypress test has two duplicate tests that will verify an API called in the app returns a 200 status ( https://www.mocky.io/ with 2000 ms delay). About 50% of the time, one of the two tests would fail locally, and it fails all (or nearly all) the time on CircleCI. Note that this is different from my private project, where it was failing on CircleCI only.
 
 I am not sure whether it's my stack that's an issue (TypeScript + Next.js + MaterialUI) or some bug in Cypress. Hopefully this repro helps.
 
