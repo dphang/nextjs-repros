@@ -11,11 +11,7 @@ describe("Test page", function() {
     cy.get("@sample").should("have.property", "status", 200);
   });
 
-  it("should be able to ping an API two times", function() {
-    cy.get("[data-cy=button]").click();
-    cy.wait("@sample");
-    cy.get("@sample").should("have.property", "status", 200);
-
+  it("should be able to ping an API a second time", function() {
     cy.get("[data-cy=button]").click();
     cy.wait("@sample");
     cy.get("@sample").should("have.property", "status", 200);
