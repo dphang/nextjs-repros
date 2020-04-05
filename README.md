@@ -1,3 +1,48 @@
 # cypress-test
 
-Test repository to reproduce issue in CircleCI where Cypress aliased routes wait times out.
+Test repository to reproduce issue in where Cypress alias routes time out on POST requests. I was facing this issue on my Next.js app where I was doing a login test like below:
+
+```
+describe("Login page", function() {
+  const loginUrl = "/login";
+  const apiUrl = Cypress.env("API_URL");
+
+  beforeEach(function() {
+    cy.server();
+    cy.route("POST", apiUrl + "/accounts/login/").as("login");
+    cy.visit(loginUrl);
+    cy.location("pathname").should("eq", "/login");
+  });
+
+  it("should show error alert with invalid credentials", function() {
+    cy.get("[data-cy=email]").type("example@example.com");
+    cy.get("[data-cy=password]").type("wrongpassword1234");
+    cy.get("[data-cy=sign-in]").click();
+    cy.wait("@login");
+    cy.get("@login").should("have.property", "status", 400);
+
+    cy.get("[data-cy=error-alert]").should("be.visible");
+
+    cy.location("pathname").should("eq", "/login");
+  });
+}
+```
+
+And similar tests for happy cases (200 responses from login). I would get errors like the below:
+
+CypressError: `cy.wait()` timed out waiting `15000ms` for the 1st request to the route: `login`. No request ever occurred.
+
+Interestingly, for my project, the above would always pass locally, but kept failing in CircleCI. I followed some suggestions in https://github.com/cypress-io/cypress/issues/3427, such as moving `cy.server()` and `cy.route()` calls at the start, but it did not help.
+
+## Test Project
+
+To attempt to reproduce this, I created this repository: a Next.js app with a simple page with a "Test Button" button. It has mostly the same `package.json` file as the one used in my private repo.
+
+Index page with simple button: https://github.com/dphang/cypress-test/blob/master/pages/index.tsx
+Cypress test: https://github.com/dphang/cypress-test/blob/master/cypress/integration/test.spec.ts
+
+The Cypress test has two duplicate tests that call an API using https://www.mocky.io/ (2000 ms delay). About 50% of the time, one of the two tests would fail locally, and it fails all (or nearly all) the time on CircleCI. Note that this is different from my private project, where it was failing on CircleCI only.
+
+I am not sure whether it's my stack that's an issue (TypeScript + Next.js + MaterialUI) or some bug in Cypress. Hopefully this repro helps.
+
+Example CircleCI build that's failing: https://app.circleci.com/pipelines/github/dphang/cypress-test/8/workflows/afaf8207-3497-46bf-9885-44efc72e62a1/jobs/8
