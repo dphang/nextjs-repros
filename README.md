@@ -18,6 +18,8 @@ describe("Login page", function() {
     cy.get("[data-cy=email]").type("example@example.com");
     cy.get("[data-cy=password]").type("wrongpassword1234");
     cy.get("[data-cy=sign-in]").click();
+    
+    // Below code that waits for @login and checks status of 400 would often fail on CircleCI as it says that no request ever occurred.
     cy.wait("@login");
     cy.get("@login").should("have.property", "status", 400);
 
