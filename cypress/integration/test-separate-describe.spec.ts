@@ -1,5 +1,5 @@
-describe("Test with no beforeEach", function() {
-  it("should be able to ping an API", function() {
+describe("Test first time", function() {
+  it("should be able to ping an API", function () {
     cy.server();
 
     // Delay of 2 seconds
@@ -10,7 +10,9 @@ describe("Test with no beforeEach", function() {
     cy.wait("@sample");
     cy.get("@sample").should("have.property", "status", 200);
   });
+});
 
+describe("Test second time", function () {
   it("should be able to ping an API a second time", function() {
     cy.server();
 
@@ -22,7 +24,9 @@ describe("Test with no beforeEach", function() {
     cy.wait("@sample");
     cy.get("@sample").should("have.property", "status", 200);
   });
+});
 
+describe("Test stub", function () {
   it("should be able to stub a response with status 400", function() {
     cy.server();
 
@@ -38,4 +42,4 @@ describe("Test with no beforeEach", function() {
     cy.wait("@sample");
     cy.get("@sample").should("have.property", "status", 400);
   });
-});
+})
