@@ -13,6 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// Replace fetch with unfetch to use XHR
 Cypress.on("window:before:load", win => {
   fetch("https://unpkg.com/unfetch/dist/unfetch.umd.js")
     .then(stream => stream.text())
@@ -23,5 +24,3 @@ Cypress.on("window:before:load", win => {
 });
 
 import "./commands";
-import "@percy/cypress";
-import "@cypress/code-coverage/support";
