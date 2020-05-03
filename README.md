@@ -43,7 +43,7 @@ To attempt to reproduce this, I created this repository: a Next.js app with a si
 Index page with simple button: https://github.com/dphang/cypress-test/blob/master/pages/index.tsx
 Cypress test: https://github.com/dphang/cypress-test/blob/master/cypress/integration/test.spec.ts
 
-The Cypress test has two duplicate tests that will verify an API called in the app returns a 200 status ( https://www.mocky.io/ with 2000 ms delay), and one more test tests stubbing. It works on my MacBook Pro, but on CircleCI and GitHub Actions, only the first test runs. There are two other test files that try to reorganize the tests, but have the same issues.
+The Cypress test has two duplicate tests that will verify an API called in the app returns a 200 status ( https://www.mocky.io/ with 2000 ms delay), and one more test for testing a stub. It works on my MacBook Pro, but on CircleCI and GitHub Actions, only the first test runs. There are two other test files that try to reorganize the tests, but have the same issues.
 
 Example error:
 
@@ -81,8 +81,6 @@ Skipping coverage report
       at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:7120:18)
 
 ```
-
-I am not sure whether it's my stack that's an issue (TypeScript + Next.js + MaterialUI) or some bug in Cypress. Hopefully this repro helps.
 
 Versions: Cypress 4.5.0, Electron 80, Next 9.3.0, React 16.13.0
 
