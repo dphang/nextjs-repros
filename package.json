@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
+    "serverless": "serverless",
     "test-cypress": "cypress run"
   },
   "repository": {
