@@ -1,0 +1,11 @@
+nextjs-repros:
+  component: "@sls-next/serverless-component@1.16.0"
+  inputs:
+    runtime: "nodejs12.x"
+    # Domain is manually managed in prod AWS account
+    bucketName: nextjs-repros
+    bucketRegion: us-west-1
+    memory: 1024
+    name:
+      defaultLambda: nextjs-repros-default-lambda
+      apiLambda: nextjs-repros-api-lambda

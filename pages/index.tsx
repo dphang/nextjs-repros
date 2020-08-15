@@ -2,6 +2,11 @@ import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
 import fetch from "isomorphic-unfetch";
 import {Typography} from "@material-ui/core";
+import {NextPageContext} from "next";
+
+type HomePageProps = {
+    test: string;
+}
 
 function HomePage(): JSX.Element {
     const [response, setResponse] = useState("");
@@ -26,6 +31,12 @@ function HomePage(): JSX.Element {
             </Typography>
         </React.Fragment>
     );
+}
+
+HomePage.getInitialProps = async (
+    ctx: NextPageContext
+): Promise<HomePageProps> => {
+    return {"test": "test"};
 }
 
 export default HomePage;
