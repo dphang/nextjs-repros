@@ -2296,23 +2296,6 @@
     pretty-bytes "^5.3.0"
     zip-lib "^0.5.0"
 
-"@fab/deployer-cf-workers@^1.0.0-rc.6":
-  version "1.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@fab/deployer-cf-workers/-/deployer-cf-workers-1.0.0-rc.6.tgz#2f249ef5b8e236de5e22604ef2cfa3a871444789"
-  integrity sha512-7XIRWePQj7jxrpdqPZdaJSt6yrFZ8hQU2alWKeJtcMSs2tZbbMzffhF8VaBMgF53PFdCROJHPRS93WXBfAGJsg==
-  dependencies:
-    "@fab/cli" "1.0.0-rc.6"
-    "@fab/core" "1.0.0-rc.6"
-    "@types/node" "^12.12.14"
-    cross-fetch "^3.0.4"
-    file-to-sha512 "^0.0.1"
-    form-data "^3.0.0"
-    fs-extra "^9.0.0"
-    globby "^11.0.0"
-    nanoid "^2.1.11"
-    pretty-bytes "^5.3.0"
-    zip-lib "^0.5.0"
-
 "@fab/input-nextjs@^1.0.0-rc.6":
   version "1.0.0-rc.6"
   resolved "https://registry.yarnpkg.com/@fab/input-nextjs/-/input-nextjs-1.0.0-rc.6.tgz#0eb428817e5a459557995c59b57ef4d2614916fa"

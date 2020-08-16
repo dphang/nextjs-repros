@@ -118,3 +118,5 @@ cypress-coverage
 __only.ts
 cypress/videos/
 cypress/screenshots/
+/.fab
+/fab.zip
