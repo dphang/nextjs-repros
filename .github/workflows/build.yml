@@ -47,8 +47,8 @@ jobs:
         PORT: 3000
       run: yarn run start &
 
-    - name: Run Cypress tests
-      run: yarn run test-cypress
+#    - name: Run Cypress tests
+#      run: yarn run test-cypress
 
     - uses: actions/upload-artifact@v1
       if: ${{ always() }}

@@ -36,9 +36,9 @@ jobs:
           background: true
           command: |
             yarn run start
-      - run:
-          name: Run Cypress tests
-          command: yarn run test-cypress
+#      - run:
+#          name: Run Cypress tests
+#          command: yarn run test-cypress
       - store_artifacts:
           path: cypress/videos
 
