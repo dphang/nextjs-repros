@@ -50,8 +50,8 @@ jobs:
 #    - name: Run Cypress tests
 #      run: yarn run test-cypress
 
-    - uses: actions/upload-artifact@v1
-      if: ${{ always() }}
-      with:
-        name: cypress-videos
-        path: cypress/videos
+#    - uses: actions/upload-artifact@v1
+#      if: ${{ always() }}
+#      with:
+#        name: cypress-videos
+#        path: cypress/videos
