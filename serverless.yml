@@ -1,7 +1,6 @@
 nextjs-repros:
-  component: "@sls-next/serverless-component@1.16.0"
+  component: "@sls-next/serverless-component@1.17.0-alpha.6"
   inputs:
-    useServerlessTraceTarget: true
     runtime: "nodejs12.x"
     bucketName: nextjs-repros
     bucketRegion: us-west-1
