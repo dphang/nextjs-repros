@@ -19,7 +19,7 @@ function AnotherPage(): JSX.Element {
 AnotherPage.getInitialProps = async (
     ctx: NextPageContext
 ): Promise<AnotherPageProps> => {
-    return {"test": "test"};
+    throw Error("error");
 }
 
 export default AnotherPage;
