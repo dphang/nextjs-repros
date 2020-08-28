@@ -1,4 +1,4 @@
 module.exports = {
   target: 'serverless',
-  trailingSlash: true
+  trailingSlash: false
 }

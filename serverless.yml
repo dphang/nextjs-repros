@@ -1,11 +1,10 @@
-nextjs-repros:
-  component: "@sls-next/serverless-component@1.16.0"
+nextjs-repros-2:
+  component: "@sls-next/serverless-component@1.17.0-alpha.7"
   inputs:
-    useServerlessTraceTarget: true
     runtime: "nodejs12.x"
-    bucketName: nextjs-repros
+    bucketName: nextjs-repros-2
     bucketRegion: us-west-1
     memory: 1024
     name:
-      defaultLambda: nextjs-repros-default-lambda
-      apiLambda: nextjs-repros-api-lambda
+      defaultLambda: nextjs-repros-default-lambda-2
+      apiLambda: nextjs-repros-api-lambda-2

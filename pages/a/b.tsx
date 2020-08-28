@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Index(): JSX.Element {
+export default function b(): JSX.Element {
     return (
         <React.Fragment>
             Hello
