@@ -59,7 +59,7 @@
     "slate-history": "0.58.1",
     "slate-hyperscript": "0.58.3",
     "slate-react": "0.58.3",
-    "ua-parser-js": "0.7.21"
+    "ua-parser-js": "0.7.33"
   },
   "devDependencies": {
     "@bahmutov/add-typescript-to-cypress": "2.1.2",
